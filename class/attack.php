@@ -2,16 +2,16 @@
 
     class attack 
     {
-        private $type;
-        private $power;
+        public $name;
+        public $power;
 
-        public function __construct($type, $power) {
-            $this -> name = $type;  
+        public function __construct($name, $power) {
+            $this -> name = $name;  
             $this -> power = $power;
         }
-        public function setAttackType($type)
+        public function setName($name)
         {
-            return $this->$type;
+            return $this->$name;
         }
 
         public function setPower($power)
@@ -19,9 +19,9 @@
             return $this->$power;
         }
 
-        public function getAttackType()
+        public function getName()
         {
-            return $this->type;
+            return $this->name;
         }
 
         public function getPower()
