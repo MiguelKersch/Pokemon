@@ -28,7 +28,7 @@ abstract class Pokemon
     {
         return self::$population;
     }
-    
+
     public function getName()
     {
         return $this->name;
@@ -42,6 +42,11 @@ abstract class Pokemon
     public function getHealth()
     {
         return $this->health;
+    }
+
+    public function setHealth($health)
+    {
+        return $this->health = $health;
     }
 
     public function getAttack()
@@ -59,5 +64,35 @@ abstract class Pokemon
     public function getWeakness()
     {
         return $this->weakness;
+    }
+
+    /* 
+    *  
+    */
+    public function battle($target, $attack)
+    {
+        $AttackType = $this->getType()->type;
+        $TargetWeakness = $target->getWeakness()->type;
+        $TargetResistance = $target->getResistance()->type;
+     
+        $WeaknessMultiplier = $target->getWeakness()->multiplier;
+        $ResistanceMultiplier = $target->getResistance()->multiplier;
+
+        if ($TargetWeakness == $AttackType) {
+            $damage = $attack->power * $WeaknessMultiplier;
+        } elseif ($TargetResistance == $AttackType) {
+            $damage = $attack->power - $ResistanceMultiplier;
+        } else {
+            $damage = $attack->power;
+        }
+        $target->reduceDamage($damage);
+    }
+    public function reduceDamage($damage)
+    {
+        $this->setHealth($this->health - $damage);
+
+        if ($this->health <= 0) {
+            self::$population--;
+        }
     }
 }
