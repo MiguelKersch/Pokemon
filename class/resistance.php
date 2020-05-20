@@ -3,22 +3,22 @@
     class resistance
     {
         public $type;
-        public $multiplier;
+        public $value;
 
-        public function __construct($type, $multiplier)
+        public function __construct($type, $Value)
         {
             $this->type = $type;
-            $this->multiplier = $multiplier;
+            $this->value = $Value;
         }
         
         public function setType($type)
         {
-            return $this->$type;
+            return $this->type = $type;
         }
 
-        public function setMultiplier($multiplier)
+        public function setValue($Value)
         {
-            return $this->$multiplier;
+            return $this->value = $Value;
         }
 
         public function getType()
@@ -26,8 +26,8 @@
             return $this->type;
         }
 
-        public function getMultiplier()
+        public function getValue()
         {
-            return $this->multiplier;
+            return $this->Value;
         }
     }

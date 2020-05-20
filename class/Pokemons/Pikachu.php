@@ -6,7 +6,7 @@ class Pikachu extends Pokemon
     {
         parent::__construct($name , $maxhealth);
 
-        $this->type = new type("Electric");
+        $this->type = new type("Lightning");
         $this->weakness = new weakness("Fire", 1.5);
         $this->resistance = new resistance("Fighting", 20);
         $this->attacks = array(
