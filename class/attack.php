@@ -2,8 +2,8 @@
 
 class attack
 {
-    public $name;
-    public $power;
+    private $name;
+    private $power;
 
     public function __construct($name, $power)
     {

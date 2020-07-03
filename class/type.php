@@ -2,19 +2,19 @@
 
 class type
 {
-    public $type;
+    private $name;
 
-    public function __construct($type)
+    public function __construct($name)
     {
-        $this->type = $type;
+        $this->name = $name;
     }
 
-    public function getType()
+    public function getName()
     {
-        return $this->type;
+        return $this->name;
     }
-    public function setType($type)
+    public function setName($name)
     {
-        return $this->type = $type;
+        return $this->name = $name;
     }
 }

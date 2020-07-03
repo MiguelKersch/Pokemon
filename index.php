@@ -1,18 +1,10 @@
 <?php
 require "autoload.php";
 
-$charmaleon = new Charmeleon("testCharmeleon", 60);
-$pickachu = new Pikachu("testPikcahu", 60);
+//Create`s a new pokemon
+$charmaleon = new Charmeleon("Charmeleon", 60);
+$pickachu = new Pikachu("Pikcahu", 60);
 
+//Goes to the static function that creates the battle
+Pokemon::constructBattle($charmaleon , $pickachu);
 
-    $pickachu->battle($charmaleon, $pickachu->getAttack()["Thunder Shock"]);
-
-    echo "pikachu uses thunder schock <br>";
-    echo "Charmeleon`s hp is now " . $charmaleon->getHealth();
-
-    $charmaleon->battle($pickachu, $charmaleon->getAttack()["Ember"]);
-    echo "<br>";
-    echo "<br> Charmeleon uses Ember <br>";
-    echo "Pikachu`s hp is now " . $pickachu->getHealth();
-
-echo "<br> There are " . Pokemon::$population . " pokemons in the world";

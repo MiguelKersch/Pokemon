@@ -2,8 +2,8 @@
 
     class resistance
     {
-        public $type;
-        public $value;
+        private $type;
+        private $value;
 
         public function __construct($type, $Value)
         {
@@ -28,6 +28,6 @@
 
         public function getValue()
         {
-            return $this->Value;
+            return $this->value;
         }
     }

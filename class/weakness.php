@@ -2,8 +2,8 @@
 
 class weakness
 {
-    public $type;
-    public $multiplier;
+    private $type;
+    private $multiplier;
 
     public function __construct($type, $multiplier)
     {
